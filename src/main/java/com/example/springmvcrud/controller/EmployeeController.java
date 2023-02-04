@@ -34,7 +34,7 @@ public class EmployeeController {
     }
 
     @RequestMapping(value="/save",method = RequestMethod.POST)
-    public String save(@ModelAttribute("employee") EmployeeDTO employee){
+    public String save(@ModelAttribute("employeeDTO") EmployeeDTO employee){
         service.saveEmployee(employee);
         return "redirect:/welcome/home";//will redirect to home request mapping
     }
@@ -58,7 +58,7 @@ public class EmployeeController {
     }
 
     @RequestMapping(value="/editSave",method = RequestMethod.POST)
-    public String editSave(@ModelAttribute("employee") EmployeeDTO employeeDTO){
+    public String editSave(@ModelAttribute("employeeDTO") EmployeeDTO employeeDTO){
         System.out.println(employeeDTO);
         service.saveEmployee(employeeDTO);
         return "redirect:/welcome/viewEmployee";
